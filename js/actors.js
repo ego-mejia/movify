@@ -1,3 +1,3 @@
 import { importActors } from "./importActors.js";
 
-importActors(2);
+importActors(5);

@@ -54,7 +54,7 @@ export function importActors(cantidadPersonas) {
     //   container.innerHTML += card;
     // });
   }
-  for (let i = 1; i < cantidadPersonas; i++) {
+  for (let i = 1; i <= cantidadPersonas; i++) {
     fetchActors(i).then((actor) => displayActor(actor));
   }
 }
