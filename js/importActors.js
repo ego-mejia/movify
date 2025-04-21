@@ -5,8 +5,10 @@ Import data from the following website:
 // https://www.tvmaze.com/api
 
 */
-export function importPeople(cantidadPersonas) {
-  async function fetchPeople(persona) {
+const cantidadPersonas = 20;
+
+export function importActors(cantidadPersonas) {
+  async function fetchActors(persona) {
     try {
       const response = await axios.get(
         "https://api.tvmaze.com/people/" + persona
@@ -53,6 +55,6 @@ export function importPeople(cantidadPersonas) {
     // });
   }
   for (let i = 1; i < cantidadPersonas; i++) {
-    fetchPeople(i).then((actor) => displayActor(actor));
+    fetchActors(i).then((actor) => displayActor(actor));
   }
 }
