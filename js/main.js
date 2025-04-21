@@ -1,3 +1,5 @@
-import { importData } from "./importData.js";
+import { importShow } from "./importShow.js";
+import { importPeople } from "./importPeople.js";
 
-importData(20);
+// importShow(20);
+importPeople(10);
