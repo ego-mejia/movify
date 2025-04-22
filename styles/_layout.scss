@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('../assets/hero-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  color: white;
+  
+    &__container{
+    padding-top: 200px;
+
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.30); // negro con 20% opacidad
+      z-index: 1;
+    }
+  
+    // Todo el contenido dentro de .hero debe estar por encima
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    p{
+        max-width: 640px;
+        font-weight: normal;
+    }
+
+    &__actions{
+      // background-color: purple;
+      display: flex;
+      gap: 20px;
+    }
+
+    &__radial-gradient{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      background: radial-gradient(
+        circle at left center,
+        rgba(0, 0, 0, 0.73) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+  }
+
+  .shows{
+    // background-color: red;
+    padding-left: 20px;
+
+    #shows-container{
+      display: flex;
+      gap: 15px;
+
+      overflow-x: scroll;
+      /* Firefox */
+      scrollbar-width: none;
+      /* IE 10+ y Edge */
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+}

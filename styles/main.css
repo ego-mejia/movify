@@ -7,4 +7,100 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  background-color: #121212;
+}
+
+button {
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("../assets/hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+.hero__container {
+  padding-top: 200px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+.hero p {
+  max-width: 640px;
+  font-weight: normal;
+}
+.hero__actions {
+  display: flex;
+  gap: 20px;
+}
+.hero__radial-gradient {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at left center, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.shows {
+  padding-left: 20px;
+}
+.shows #shows-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ y Edge */
+  -ms-overflow-style: none;
+}
+.shows #shows-container::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 999;
+  background-image: linear-gradient(180deg, rgb(14, 40, 28) 0%, rgba(14, 40, 28, 0) 100%);
+  width: 100%;
+}
+.navbar a {
+  color: white;
+}
+.navbar a:hover {
+  color: #3CD441;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  gap: 13px;
+  background-color: white;
+}
+.button.__secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.button.__secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }/*# sourceMappingURL=main.css.map */
