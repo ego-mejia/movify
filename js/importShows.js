@@ -24,18 +24,27 @@ export function importShows(cantidadSeries) {
   }
 
   function displayShows(shows) {
-    const container = document.getElementById("shows-container");
+    const slider = document.getElementById("newShowsSlider");
+    const container = document.getElementById("newShowsContainer");
 
     shows.forEach((show) => {
       const card = `
-            <div class="show-card">
-              <img src="${show.image}" alt="${show.name}">
+            <div class="new-card">
+              <img src="${show.image}" alt="${show.name}" draggable="false">
               <h5>${show.name}</h5>
               <p> ${show.year}</p>
             </div>
           `;
-      container.innerHTML += card;
+      slider.innerHTML += card;
     });
+
+    if (shows.length >= 5) {
+      console.log("Shows >5");
+      const sliderShadow = `
+            <div id="sliderShadow"></div>
+          `;
+      container.innerHTML += sliderShadow;
+    }
   }
 
   fetchTvShow().then((shows) => displayShows(shows));

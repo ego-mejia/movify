@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 100vh;
+  height: 85vh;
   background-image: url('../assets/hero-img.jpg');
   background-size: cover;
   background-position: center;
@@ -51,13 +51,23 @@
     }
   }
 
-  .shows{
+  .new{
     // background-color: red;
+    position: relative;
+    z-index: 5;
     padding-left: 20px;
+    margin-top: -100px;
 
-    #shows-container{
+    background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 1) 70%,
+      rgba(120, 120, 120, 0) 90%
+    );
+
+    #newShowsSlider{
+      position: relative;
       display: flex;
-      gap: 15px;
+      gap: 25px;
 
       overflow-x: scroll;
       /* Firefox */
@@ -66,6 +76,34 @@
       -ms-overflow-style: none;
       &::-webkit-scrollbar {
         display: none;
+      }
+    }
+    #newShowsContainer{
+      // background-color: purple;
+      position: relative;
+    }
+    #sliderShadow{
+      // background-color: cyan;
+
+      position: absolute;
+      z-index: 5;
+      max-width: 280px;
+      // max-height: 350px;
+      width: 100%;
+      height: 100%;
+      right: -12px;
+      top: 0;
+
+      background: linear-gradient(
+        270deg,
+        rgba(18, 18, 18, 1) 13%,
+        rgba(120, 120, 120, 0) 100%
+      );
+    }
+
+    .new-card{
+      img{
+        height: 280px;
       }
     }
 
