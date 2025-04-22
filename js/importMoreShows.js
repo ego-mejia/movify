@@ -24,17 +24,17 @@ export function importMoreShows(cantidadSeries) {
   }
 
   function displayMoreShows(shows) {
-    const container = document.getElementById("more-shows-container");
+    const slider = document.getElementById("moreShowsSlider");
 
     shows.forEach((show) => {
       const card = `
-            <div class="show-card">
+            <div class="new-card">
               <img src="${show.image}" alt="${show.name}">
               <h3>${show.name}</h3>
               <p>Año: ${show.year}</p>
             </div>
           `;
-      container.innerHTML += card;
+      slider.innerHTML += card;
     });
   }
 

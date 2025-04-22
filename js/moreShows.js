@@ -1,2 +1,2 @@
-import { importMoreShows } from "./importShows.js";
-importMoreShows(3);
+import { importMoreShows } from "./importMoreShows.js";
+importMoreShows(6);
