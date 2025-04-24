@@ -6,17 +6,22 @@ export function slider(data, insertHTML) {
     Función para insertar cartas en el contenedor
     */
     const sliderContainer = document.getElementById(insertHTML);
+
+    // crear slider
+    const slider = `<div class="slider"></div>`;
+    sliderContainer.innerHTML += slider;
+
     // const container = document.getElementById("newShowsContainer");
 
     shows.forEach((show) => {
       const card = `
-            <div class="new-card">
+            <div class="slider__card">
               <img src="${show.image}" alt="${show.name}" draggable="false">
               <h5>${show.name}</h5>
               <p> ${show.year}</p>
             </div>
           `;
-      sliderContainer.innerHTML += card;
+      sliderContainer.firstChild.innerHTML += card;
     });
 
     // --------- Add buttons
