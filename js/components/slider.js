@@ -21,8 +21,8 @@ export function slider(data, insertHTML) {
     sliderContainer.innerHTML += sliderButtons;
 
     // --------- crear slider
-    const slider = `<div class="slider__wrapper"></div>`;
-    sliderContainer.innerHTML += slider;
+    const sliderWrapper = `<div class="slider__wrapper"></div>`;
+    sliderContainer.innerHTML += sliderWrapper;
 
     // const container = document.getElementById("newShowsContainer");
 
@@ -35,6 +35,29 @@ export function slider(data, insertHTML) {
             </div>
           `;
       sliderContainer.lastChild.innerHTML += card;
+    });
+
+    // Variables de control
+    let currentPosition = 0;
+    const leftButton = sliderContainer.querySelector(".slider__button-left");
+    const rightButton = sliderContainer.querySelector(".slider__button-right");
+    const cards = sliderContainer.lastChild.querySelectorAll(
+      ".slider__wrapper--card"
+    ); // Seleccionar todas las tarjetas
+
+    // Mover tarjetas individualmente
+    rightButton.addEventListener("click", () => {
+      currentPosition -= 500;
+      cards.forEach((card) => {
+        card.style.transform = `translateX(${currentPosition}px)`;
+      });
+    });
+
+    leftButton.addEventListener("click", () => {
+      currentPosition += 500;
+      cards.forEach((card) => {
+        card.style.transform = `translateX(${currentPosition}px)`;
+      });
     });
 
     // if (shows.length >= 5) {
