@@ -6,7 +6,9 @@ async function main() {
   const showsNew = await importShows(10, 0);
   const showsToKeepWatching = await importShows(10, 2);
 
-  // SECTION 2
+  // Slider 1
+  slider(showsNew, "tvShowsNew");
+  // Slider 2
   slider(showsToKeepWatching, "tvShowsKeepWatching");
 }
 
