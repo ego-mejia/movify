@@ -48,6 +48,7 @@
     <header></header>
 
     <main>
+      <!-- Start of Hero Section -->
       <section class="hero">
         <div class="hero__radial-gradient"></div>
         <div class="hero__container container-lg">
@@ -70,39 +71,29 @@
           </div>
         </div>
       </section>
+      <!-- End of Hero Section -->
 
       <!-- Start of New Shows Slider -->
-      <section class="new container-fluid" id="newShowsContainer">
+      <section id="tvShowsNew" class="container-fluid">
         <h3>Novedades</h3>
-
-        <div class="slider-wrapper">
-          <button class="slider__button left">
-            <img src="./assets/chevron-left.svg" alt="chevron left" />
-          </button>
-
-          <div id="newShowsSlider" class="new__slider">
-            <!-- tarjetas .new-card aquí -->
-          </div>
-
-          <button class="slider__button right">
-            <img src="./assets/chevron-right.svg" alt="chevron right" />
-          </button>
-        </div>
       </section>
       <!-- End of New Shows Slider -->
 
       <!-- Start of "Keep watching" Slider -->
-      <!-- <div id="moreShowsSlider"></div> -->
+      <section id="tvShowsKeepWatching" class="container-fluid">
+        <h3>Continuar viendo</h3>
+      </section>
       <!-- End of "Keep watching" Slider -->
     </main>
+
     <footer>footer</footer>
+
     <!-- Bootstrap JS Bundle (incluye Popper) -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
     <script type="module" src="./js/main.js" async defer></script>
-    <script type="module" src="./js/shows.js" async defer></script>
-    <!-- <script type="module" src="./js/moreShows.js" async defer></script> -->
+    <script type="module" src="./js/pages/index.js" async defer></script>
   </body>
 </html>

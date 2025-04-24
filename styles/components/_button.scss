@@ -1,0 +1,27 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+    gap: 13px;
+
+    background-color: white;
+    
+    &:hover{
+        filter: brightness(0.8);
+    }
+
+    &.__secondary{
+        background-color: rgba(255, 255, 255, 0.20);
+        color: white;
+        
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.30);
+            
+        }
+    }
+}

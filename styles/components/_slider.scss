@@ -1,0 +1,81 @@
+
+
+.slider{
+    // background-color: red;
+    position: relative;
+    z-index: 5; 
+    // padding-left: 20px; // <---------  Este padding lo debe de tener el slider, no el contenedor
+
+    background: linear-gradient( 
+        0deg,
+        rgba(18, 18, 18, 1) 70%,
+        rgba(120, 120, 120, 0) 90%
+      );
+
+    // -------- Slider Buttons
+    %slider-button-base {
+        position: absolute;
+        z-index: 6;
+        max-width: 172px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(18, 18, 18, 0.698);
+        max-height: 280px;
+        top: 42px;
+        &:hover{
+            background-color: rgba(58, 57, 57, 0.698);
+    
+        }
+    }
+    .slider__button-left {
+        @extend %slider-button-base;
+        left: -20px;
+        // background-color: royalblue;
+     }
+    .slider__button-right {
+        @extend %slider-button-base;
+        // background-color: palevioletred;
+        right: -10px;
+     }
+
+
+
+    &__wrapper{
+        // background-color: rgb(151, 44, 252);
+        /*Este estilo corresponde al componente que contiene a las cartas de tv shows*/
+        position: relative;
+        display:flex;
+        align-items: start;
+        gap: 25px;
+        
+        // -------- Scrollbar
+        overflow: hidden;
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        // -------- TvShow Card
+        &--card {
+            // flex: 0 0 auto;
+            h6 {
+                margin: 0
+            }
+            img {
+                border-radius: 10px;
+                max-height: 280px;
+                user-select: none;
+            }
+        }
+
+        // ----- End of Slider Wrapper------
+    }
+    
+    h3{
+        background-color: none;
+          }   
+    // ----- End of Slider ------
+}
