@@ -11,10 +11,9 @@
 
     background-color: white;
     
-    // &:hover{
-    //     color: rgba(0, 0, 0, 0.4);
-        
-    // }
+    &:hover{
+        filter: brightness(0.8);
+    }
 
     &.__secondary{
         background-color: rgba(255, 255, 255, 0.20);

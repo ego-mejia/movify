@@ -1,103 +1,80 @@
-.slider__button{
-    position: absolute;
-    z-index: 6;
-    max-width: 172px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 0.698);
-
-    &.left{
-        left: -20px;
-        
-    }
-    &.right{
-        right: -10px;
-    }
-
-    &:hover{
-        background-color: rgba(58, 57, 57, 0.698);
-
-    }
-    // background-color: rgba(255, 255, 255, 0.20);
-
-}
 
 
-
-// STYLE FOR SLIDER
-.slider {
+.slider{
+    // background-color: red;
     position: relative;
-    z-index: 5;
-    padding-left: 20px;
-    margin-top: -100px;
-  
-    background: linear-gradient(
-      0deg,
-      rgba(18, 18, 18, 1) 70%,
-      rgba(120, 120, 120, 0) 90%
-    );
-  
-    .slider-wrapper {
-      display: flex;
-      align-items: center;
-      position: relative;
-      // overflow: hidden; // oculta lo que se sale
-    }
-  
-    #newShowsSlider {
-      display: flex;
-      gap: 25px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      flex: 1;
-      padding: 10px 0;
-  
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-  
-      .new-card {
-        flex: 0 0 auto;
-        img {
-          height: 280px;
-          user-select: none;
+    // z-index: 5; <--------- Descomentar al final
+    // padding-left: 20px; // <---------  Este padding lo debe de tener el slider, no el contenedor
+
+    // margin-top: -100px; // <--------- Para sobreponerse al Hero
+
+    background: linear-gradient( 
+        0deg,
+        rgba(18, 18, 18, 1) 70%,
+        rgba(120, 120, 120, 0) 90%
+      );
+
+    // -------- Slider Buttons
+    %slider-button-base {
+        position: absolute;
+        z-index: 6;
+        top: 0;
+        max-width: 172px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(18, 18, 18, 0.698);
+        
+        &:hover{
+            background-color: rgba(58, 57, 57, 0.698);
+    
         }
-      }
     }
-  
-    .slider__button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 10;
-      img {
-        width: 40px;
-        height: 40px;
-      }
-  
-      &.left {
-        margin-right: 10px;
-      }
-      &.right {
-        margin-left: 10px;
-      }
+    .slider__button-left {
+        @extend %slider-button-base;
+        left: -20px;
+        // background-color: royalblue;
+     }
+    .slider__button-right {
+        @extend %slider-button-base;
+        // background-color: palevioletred;
+        right: -10px;
+     }
+
+
+
+    &__wrapper{
+        // background-color: rgb(151, 44, 252);
+        /*Este estilo corresponde al componente que contiene a las cartas de tv shows*/
+        position: relative;
+        display:flex;
+        align-items: start;
+        gap: 25px;
+        
+        // -------- Scrollbar
+        overflow: hidden;
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        // -------- TvShow Card
+        &--card {
+            // flex: 0 0 auto;
+            h6 {
+                margin: 0
+            }
+            img {
+                max-height: 280px;
+                user-select: none;
+            }
+        }
+
+        // ----- End of Slider Wrapper------
     }
-  
-    #sliderShadow {
-      position: absolute;
-      z-index: 5;
-      width: 100%;
-      height: 100%;
-      right: -12px;
-      top: 0;
-      // background: linear-gradient(
-      //   270deg,
-      //   rgba(18, 18, 18, 1) 13%,
-      //   rgba(120, 120, 120, 0) 100%
-      // );
-      pointer-events: none;
-    }
-  }
-  
+    
+    
+    // ----- End of Slider ------
+}
