@@ -1,0 +1,38 @@
+@import '../variables';
+
+.footer{
+    background-color: blue;
+    &__social{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    &__copyright{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    &__links{
+        max-width: 1000px;
+        margin: 0 auto;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &--container{
+            display: flex;
+            flex-direction: column;
+            a{
+                color: inherit;           // hereda el color del padre
+                text-decoration: none;    // quita el subrayado
+                background-color: transparent;
+                cursor: pointer;
+                &:hover {
+                    color: $primary-color;
+                  }
+            }
+        }
+    }
+    &__copyright{
+        color: white;
+    }
+}
