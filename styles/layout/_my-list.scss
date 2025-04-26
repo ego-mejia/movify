@@ -1,14 +1,37 @@
 @import '../variables';
 
 .footer{
-    background-color: blue;
+    background-color: $background-color;
+    margin-top: 100px;
+    padding: 20px;
     &__social{
+        display: flex;
+        gap: 20px;
         max-width: 1000px;
         margin: 0 auto;
+        margin-bottom: 20px;
+        
+        a{
+            text-decoration: none;    // quita el subrayado
+        }
+        
+        @media (max-width: 600px) {
+            margin: 0 auto; 
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     &__copyright{
         max-width: 1000px;
         margin: 0 auto;
+        margin-top: 20px;
+        font-size: 10px;
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
     }
     &__links{
         max-width: 1000px;
@@ -21,6 +44,7 @@
         &--container{
             display: flex;
             flex-direction: column;
+            gap: 20px;
             a{
                 color: inherit;           // hereda el color del padre
                 text-decoration: none;    // quita el subrayado
@@ -30,6 +54,13 @@
                     color: $primary-color;
                   }
             }
+        }
+        @media (max-width: 600px) {
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
         }
     }
     &__copyright{
