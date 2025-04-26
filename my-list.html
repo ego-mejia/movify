@@ -47,15 +47,18 @@
   <body>
     <header></header>
     <main>
-      <div id="more-shows-container"></div>
+      <section id="showsfavorites" class="container-lg favorite"></section>
     </main>
     <footer></footer>
+    <!-- <link rel="manifest" href="assets/favicon_io/site.webmanifest" /> -->
+    <!-- Carga Axios desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Bootstrap JS Bundle (incluye Popper) -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="./js/pages/my-list.js" async defer></script>
     <script type="module" src="./js/main.js" async defer></script>
-    <script type="module" src="./js/moreShows.js" async defer></script>
   </body>
 </html>

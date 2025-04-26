@@ -66,9 +66,133 @@ main > section:nth-child(3) {
   margin-top: 75px;
 }
 
+header, main {
+  position: relative;
+  background-color: #121212;
+}
+
+.favorite {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  color: white;
+  background-color: #121212;
+}
+@media (max-width: 600px) {
+  .favorite .favorite {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+header, main {
+  position: relative;
+  background-color: #121212;
+}
+
+.actors {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  color: white;
+  background-color: #121212;
+}
+@media (max-width: 600px) {
+  .actors .actors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.actors h6 {
+  margin: 0;
+}
+.actors img {
+  border-radius: 10px;
+  max-height: 280px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  gap: 13px;
+  background-color: white;
+}
+.button:hover {
+  filter: brightness(0.8);
+}
+.button.__secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.button.__secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slider {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(0deg, rgb(18, 18, 18) 70%, rgba(120, 120, 120, 0) 90%);
+}
+.slider .slider__button-right, .slider .slider__button-left {
+  position: absolute;
+  z-index: 6;
+  max-width: 172px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.698);
+  max-height: 280px;
+  top: 42px;
+}
+.slider .slider__button-right:hover, .slider .slider__button-left:hover {
+  background-color: rgba(58, 57, 57, 0.698);
+}
+.slider .slider__button-left {
+  left: -20px;
+}
+.slider .slider__button-right {
+  right: -10px;
+}
+.slider__wrapper {
+  /*Este estilo corresponde al componente que contiene a las cartas de tv shows*/
+  position: relative;
+  display: flex;
+  align-items: start;
+  gap: 25px;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+}
+.slider__wrapper::-webkit-scrollbar {
+  display: none;
+}
+.slider__wrapper--card h6 {
+  margin: 0;
+}
+.slider__wrapper--card img {
+  border-radius: 10px;
+  max-height: 280px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.slider h3 {
+  background-color: none;
+}
+
 .footer {
   background-color: #121212;
-  margin-top: 100px;
+  padding-top: 100px;
   padding: 20px;
 }
 .footer__social {
@@ -137,27 +261,6 @@ main > section:nth-child(3) {
   color: white;
 }
 
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 12px 20px;
-  border-radius: 5px;
-  gap: 13px;
-  background-color: white;
-}
-.button:hover {
-  filter: brightness(0.8);
-}
-.button.__secondary {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-.button.__secondary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .navbar {
   position: fixed;
   z-index: 999;
@@ -169,57 +272,4 @@ main > section:nth-child(3) {
 }
 .navbar a:hover {
   color: #3CD441;
-}
-
-.slider {
-  position: relative;
-  z-index: 5;
-  background: linear-gradient(0deg, rgb(18, 18, 18) 70%, rgba(120, 120, 120, 0) 90%);
-}
-.slider .slider__button-right, .slider .slider__button-left {
-  position: absolute;
-  z-index: 6;
-  max-width: 172px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(18, 18, 18, 0.698);
-  max-height: 280px;
-  top: 42px;
-}
-.slider .slider__button-right:hover, .slider .slider__button-left:hover {
-  background-color: rgba(58, 57, 57, 0.698);
-}
-.slider .slider__button-left {
-  left: -20px;
-}
-.slider .slider__button-right {
-  right: -10px;
-}
-.slider__wrapper {
-  /*Este estilo corresponde al componente que contiene a las cartas de tv shows*/
-  position: relative;
-  display: flex;
-  align-items: start;
-  gap: 25px;
-  overflow: hidden;
-  overflow-x: auto;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-}
-.slider__wrapper::-webkit-scrollbar {
-  display: none;
-}
-.slider__wrapper--card h6 {
-  margin: 0;
-}
-.slider__wrapper--card img {
-  border-radius: 10px;
-  max-height: 280px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.slider h3 {
-  background-color: none;
 }/*# sourceMappingURL=main.css.map */
